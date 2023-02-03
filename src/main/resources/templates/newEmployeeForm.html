@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Add New Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+    
+</head>
+<body>
+<div align="center">
+    <h1 id="page_title"></h1>
+    <script>
+    	var title = sessionStorage.getItem('title');
+    	document.getElementById("page_title").innerHTML = title;
+    	
+    </script>
+    <br />
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+
+      
+ 		<div alight="left">
+            <tr>
+                <!--<label class="form-label" >Employee ID</label>-->
+                <td>
+                	<input type="hidden" th:field="*{empId}" />
+	                <!--<input type="text" th:field="*{empId}" class="form-control" placeholder="Employee Id" />-->
+	             
+                 <label class="form-label" >First Name</label>
+                <input type="text" th:field="*{firstName}" class="form-control" placeholder="First Name" /></td>
+            </tr>
+            </div>
+            
+            <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Last Name</label>
+                <td><input type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name" /></td>
+            </tr>
+            </div>
+            
+            <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Designation</label>
+                <td><input type="text" th:field="*{designation}" class="form-control" placeholder="Designation" /></td>
+            </tr>
+            </div>
+            
+            <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Domain</label>
+                <td><input type="text" th:field="*{domain}" class="form-control" placeholder="Domain" /></td>
+            </tr>
+            </div>
+            
+          	<div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Address</label>
+                <td><input type="text" th:field="*{address}" class="form-control" placeholder="Address" /></td>
+            </tr>
+            </div> 
+            <div alight="left">
+                 <tr>
+                 <label class="form-label" >Location</label>
+                <td><input type="text" th:field="*{location}" class="form-control" placeholder="Location" /></td>
+            </tr>
+            </div> 
+            
+            <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Email</label>
+                <td><input type="text" th:field="*{email}" class="form-control" placeholder="Email" /></td>
+            </tr>
+            </div>
+            
+            <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Joining Date</label>
+                <td><input type="text" th:field="*{date}" class="form-control" placeholder="Joining Date" /></td>
+            </tr>
+            </div>
+            
+			<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
